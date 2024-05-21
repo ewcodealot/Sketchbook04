@@ -92,7 +92,7 @@ export class Airplane extends Vehicle implements IControllable, IWorldEntity
 			if (this.enginePower > 0) this.enginePower -= timeStep * 0.12;
 			if (this.enginePower < 0) this.enginePower = 0;
 		}
-		this.rotor.rotateX(this.enginePower * timeStep * 60);
+		this.rotor.rotateX(this.enginePower * timeStep * 600);
 
 		// Steering
 		if (this.rayCastVehicle.numWheelsOnGround > 0)
@@ -261,7 +261,7 @@ export class Airplane extends Vehicle implements IControllable, IWorldEntity
 		let speedModifier = 0.02;
 		if (plane.actions.throttle.isPressed && !plane.actions.brake.isPressed)
 		{
-			speedModifier = 0.06;
+			speedModifier = 60;
 		}
 		else if (!plane.actions.throttle.isPressed && plane.actions.brake.isPressed)
 		{
@@ -395,7 +395,7 @@ export class Airplane extends Vehicle implements IControllable, IWorldEntity
 			},
 			{
 				keys: ['B'],
-				desc: 'Brake'
+				desc: 'Boost'
 			},
 			{
 				keys: ['V'],
