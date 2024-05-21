@@ -1,3 +1,5 @@
+<h2 style="text-align:center;"><b>This is not my original project!</b></h2>
+
 <p align="center">
 	<a href="https://jblaha.art/sketchbook/latest"><img src="./src/img/thumbnail.png"></a>
 	<br>
