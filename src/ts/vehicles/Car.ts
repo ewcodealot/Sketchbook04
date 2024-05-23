@@ -94,16 +94,16 @@ export class Car extends Vehicle implements IControllable
 		}
 
 		// Engine
-		const engineForce = 500;
-		const maxGears = 5;
+		const engineForce = 800;
+		const maxGears = 10;
 		const gearsMaxSpeeds = {
-			'R': -4,
+			'R': -10,
 			'0': 0,
-			'1': 5,
-			'2': 9,
-			'3': 13,
-			'4': 17,
-			'5': 22,
+			'1': 7,
+			'2': 11,
+			'3': 20,
+			'4': 25,
+			'5': 30,
 		};
 
 		if (this.shiftTimer > 0)
@@ -150,7 +150,7 @@ export class Car extends Vehicle implements IControllable
 		{
 			let speed = this.collision.velocity.length();
 
-			if (speed > 0.1 && speed < 4)
+			if (speed > 0.1 && speed < 40)
 			{
 				this.triggerAction('brake', true);
 			}
