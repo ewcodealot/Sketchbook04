@@ -13,6 +13,7 @@ export class Airplane extends Vehicle implements IControllable, IWorldEntity
 {
 	public entityType: EntityType = EntityType.Airplane;
 	public rotor: THREE.Object3D;
+	public boxmanfirstglb: THREE.Object3D;
 	public leftAileron: THREE.Object3D;
 	public rightAileron: THREE.Object3D;
 	public elevators: THREE.Object3D[] = [];
@@ -93,6 +94,7 @@ export class Airplane extends Vehicle implements IControllable, IWorldEntity
 			if (this.enginePower < 0) this.enginePower = 0;
 		}
 		this.rotor.rotateX(this.enginePower * timeStep * 600);
+		this.boxmanfirstglb.rotateX(this.enginePower * timeStep * 600);
 
 		// Steering
 		if (this.rayCastVehicle.numWheelsOnGround > 0)
